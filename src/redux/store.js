@@ -3,7 +3,7 @@ import imagesSlice from './feature/imagesSlice';
 
 export const store = configureStore({
     reducer: {
-        images: imagesSlice,
+        imageData: imagesSlice,
     },
   })
 
