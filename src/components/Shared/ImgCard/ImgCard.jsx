@@ -4,6 +4,8 @@ import { handleCheckBox, reorderImages } from "../../../redux/feature/imagesSlic
 import { useDrag, useDrop } from "react-dnd";
 
 const ImgCard = ({ img, index }) => {
+  const style1 = {gridColumn: `span ${index === 0 ? 2:1}`};
+  const style2 = {gridRow: `span ${index === 0 ? 2:1}`};
   const dispatch = useDispatch();
   const checked = useSelector((state) => state.imageData.checkbox);
   const isChecked = checked.includes(img?.url);
@@ -38,8 +40,8 @@ const ImgCard = ({ img, index }) => {
         <div
         ref={(node) => drag(drop(node))}
          key={index}
-          className={`row-span-${index === 0 ? 2:1} border rounded-lg relative group hover:bg-gray-500`}
-          style={{gridColumn:`span ${index === 0 ? 2:1}`}}
+          className={`border rounded-lg relative group hover:bg-gray-500`}
+          style={{...style1, ...style2}}
         >
           <input
             type="checkbox"

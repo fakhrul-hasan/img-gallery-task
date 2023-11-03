@@ -16,7 +16,8 @@ const ImgSection = () => {
     }
     if (files.length > 0) {
       const url = URL.createObjectURL(files[0])
-      dispatch(addImage(url));
+      const data = {url: url, createdAt: new Date()}
+      dispatch(addImage(data));
     }
   };
 
