@@ -21,12 +21,12 @@ const ImgSection = () => {
   };
 
   return (
-          <div className="grid grid-cols-5 gap-5 p-5" >
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 p-5" >
             {images?.map((img, index) => (
               <ImgCard key={index} index={index} img={img} />
             ))}
             <div
-              className="col-span-1 row-span-1 border rounded-lg flex flex-col justify-center items-center gap-4 px-10 py-14"
+              className="col-span-1 row-span-1 border rounded-lg flex flex-col justify-center items-center gap-4 lg:px-10 sm:py-10 md:py-5 lg:py-14"
               onDragOver={handleAddImage}
               onDrop={handleAddImage}
               onClick={() => {
@@ -43,8 +43,8 @@ const ImgSection = () => {
                 id="primary-file-input"
                 className="hidden"
               />
-              <BiImageAdd className="text-4xl" />
-              <h5>Add Images</h5>
+              <BiImageAdd className="text-xl sm:text-4xl" />
+              <h5 className="text-sm sm:text-base">Add Images</h5>
             </div>
           </div>
   );
